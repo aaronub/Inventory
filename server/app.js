@@ -10,11 +10,15 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
-});
+// app.get('/', (req, res, next) => {
+//   res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
+// });
 
 app.use('/api', require('./api'));
+
+app.get('*', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
+});
 
 app.use((req, res, next) => {
   const error = Error('page not found');
