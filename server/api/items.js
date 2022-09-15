@@ -1,49 +1,49 @@
 const router = require('express').Router();
-const { Todo } = require('../db').models;
+const { Item } = require('../db').models;
 
-// GET /api/todos
+// GET /api/items
 router.get('/', async (req, res, next) => {
   try {
-    res.send(await Todo.findAll());
+    res.send(await Item.findAll());
   } catch (error) {
     next(error);
   }
 });
 
-// GET /api/todos/:id
+// GET /api/items/:id
 router.get('/:id', async (req, res, next) => {
   try {
-    res.send(await Todo.findByPk(req.params.id));
+    res.send(await Item.findByPk(req.params.id));
   } catch (error) {
     next(error);
   }
 });
 
-// POST /api/todos
+// POST /api/items
 router.post('/', async (req, res, next) => {
   try {
-    res.status(201).send(await Todo.create(req.body));
+    res.status(201).send(await Item.create(req.body));
   } catch (error) {
     next(error);
   }
 });
 
-// PUT /api/todos/:id
+// PUT /api/items/:id
 router.put('/:id', async (req, res, next) => {
   try {
-    const todo = await Todo.findByPk(req.params.id);
-    res.send(await todo.update(req.body));
+    const item = await Item.findByPk(req.params.id);
+    res.send(await item.update(req.body));
   } catch (error) {
     next(error);
   }
 });
 
-// DELETE /api/todos/:id
+// DELETE /api/items/:id
 router.delete('/:id', async (req, res, next) => {
   try {
-    const todo = await Todo.findByPk(req.params.id);
-    await todo.destroy();
-    res.send(todo);
+    const item = await Item.findByPk(req.params.id);
+    await item.destroy();
+    res.send(item);
   } catch (error) {
     next(error);
   }

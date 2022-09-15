@@ -104,3 +104,39 @@ button:disabled {
   background-color: #ccc;
 }
 
+.quantity {
+  margin-left: 30px;
+}
+.products-in-out {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content:space-between;
+  font-size: 20px
+}
+.in-out-bar {
+  background-color: #59A9E9;
+  color: white;
+  padding: 7px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px lightblue;
+}
+.in-out-bar:focus {
+  /* background-color:transparent;
+  transition: 0.5s; */
+  background-color: #ccc;
+}
+.in-out-bar-link {
+  color: white
+}
+.sold {
+  display: flex;
+  width: 400px;
+  justify-content:space-between;
+  align-items: center;
+}
+select {
+  padding: 0.3em;
+  margin: 0.5em 0;
+  font-size: 1.5em;
+}

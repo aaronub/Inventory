@@ -1,12 +1,14 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import loggingMiddleware from 'redux-logger';
 import thunk from 'redux-thunk';
-import todosReducer from './todos';
-import todoReducer from './todo';
+import itemsReducer from './items';
+import itemReducer from './item';
+import orderReducer from './order';
 
 const rootReducer = combineReducers({
-  todos: todosReducer,
-  todo: todoReducer
+  items: itemsReducer,
+  item: itemReducer,
+  order: orderReducer
 });
 
 export default createStore(
