@@ -4,9 +4,7 @@ import { deleteItem,editItem } from '../store/items';
 import {useDispatch, useSelector} from 'react-redux';
 import { fetchItem } from '../store/item';
 
-
-
-const EditItem =({history})=> {
+const EditItem =()=> {
     const params = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -28,7 +26,7 @@ const EditItem =({history})=> {
     }
     const handleDelete = (event)=>{
         // event.preventDefault();
-        dispatch(deleteItem(params.id, history))
+        dispatch(deleteItem(params.id))
         navigate('/')
     }
     const handleSubmit =(event)=> {

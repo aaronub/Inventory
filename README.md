@@ -1,4 +1,4 @@
-# Todos
+# Inventory
 
 ## Setup
 

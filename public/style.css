@@ -1,16 +1,30 @@
 /* tags */
+@keyframes color {
+  0%   { background: #c0dfdf; }
+  20%  { background: #74c175; }
+  40%  { background: #b7c36b; }
+  60%  { background: #9d8a3e; }
+  80%  { background: #6acb6c; }
+  100% { background: #91cfcf; }
+}
+
 * {
   box-sizing: border-box;
 }
 
 ul {
-  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type:none;
   padding: 0;
+  animation: color 9s infinite linear;
+  border-radius: 10px;
 }
 
 li {
   border-bottom: solid 1px gray;
   padding: 0.5rem;
+  width: 410px;
 }
 
 a {
@@ -93,7 +107,8 @@ input {
 
 button {
   color: white;
-  background-color: #59A9E9;
+  background-color: #be88de;
+  margin-right: 5px;
 }
 
 button:hover {
@@ -110,9 +125,10 @@ button:disabled {
 .products-in-out {
   display: flex;
   flex-direction: row;
-  width: 300px;
+  /* width: 310px; */
   justify-content:space-between;
-  font-size: 20px
+  font-size: 20px;
+  margin-top: 10px;
 }
 .in-out-bar {
   background-color: #59A9E9;
@@ -131,7 +147,7 @@ button:disabled {
 }
 .sold {
   display: flex;
-  width: 400px;
+  width: 500px;
   justify-content:space-between;
   align-items: center;
 }
@@ -140,3 +156,88 @@ select {
   margin: 0.5em 0;
   font-size: 1.5em;
 }
+.invoice {
+  display: flex;
+  justify-content:space-between;
+}
+.invoices {
+  background-color: pink;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgb(44, 147, 181);
+}
+
+select {
+  width: 315px
+}
+
+#main .header {
+  width: 80%;
+
+}
+
+.basic {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.music-bar {
+  display: flex;
+  justify-content:space-between;
+  align-items:flex-end
+}
+
+.title-word {
+  animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+.welcome-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 90px;
+  text-transform: uppercase;
+}
+
+
+

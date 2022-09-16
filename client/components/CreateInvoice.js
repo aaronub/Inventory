@@ -3,6 +3,7 @@ import { useDispatch , useSelector } from 'react-redux'
 import { editItem } from '../store/items'
 import { _addOrder } from '../store/order'
 import Invoice from './Invoice'
+import {Link} from 'react-router-dom'
 
 const CreateInvoice = ()=>{
     const dispatch = useDispatch()
@@ -35,7 +36,6 @@ const CreateInvoice = ()=>{
         setSoldQuantity('')
         setSoldPrice('')
     }
-    console.log('CreatInvoice coponent, order:', order)
 
     return(
         <div>
@@ -51,14 +51,15 @@ const CreateInvoice = ()=>{
                 </select>
             </div>
             <div className='sold'>
-                <span>Quantity:</span>
+                <span>Quantity(cs):</span>
                 <input onChange={handleSoldQuantity} value={soldQuantity} placeholder='Quantity'/>
             </div>
             <div className='sold'>
                 <span>Sold Price:</span>
                 <input onChange={handleSoldPrice} value={soldPrice} placeholder='Sold Price'/>
             </div>
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit}>Add to Invoice</button>
+            <Link to='/invoice'><button>See Invoice</button></Link>
             <Invoice order={order}/>
         </div>
     )

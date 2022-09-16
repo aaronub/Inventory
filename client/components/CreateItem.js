@@ -3,9 +3,9 @@ import { createItem } from '../store/items';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-const CreateItem = ({ history })=> {
+const CreateItem = ()=> {
   const [ itemName, setItemName ] = useState('');
-  const [ quantity, setQuantity ] = useState(0);
+  const [ quantity, setQuantity ] = useState('');
 
   const handleChangeItemName = (event)=>{
     setItemName(event.target.value)
@@ -20,7 +20,7 @@ const CreateItem = ({ history })=> {
   const handleSubmit = (evt) => {
     evt.preventDefault(); 
     dispatch(createItem({ itemName, quantity }));
-    navigate('/')
+    navigate('/items')
   }
 
   return (
@@ -28,7 +28,7 @@ const CreateItem = ({ history })=> {
       <label htmlFor='itemName'>New Item Name:</label>
       <input name='itemName' onChange={handleChangeItemName} value={itemName} />
 
-      <label htmlFor='quantity'>Quantity:</label>
+      <label htmlFor='quantity'>Quantity(cs):</label>
       <input name='quantity' onChange={handleChangeQuantity} value={quantity} />
 
       <button type='submit'>Submit</button>
